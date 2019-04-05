@@ -1,8 +1,103 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+  background-color: 
 }
 
-a {
-  color: #00B7FF;
+.navbar {
+  background-color: #cea71d;
+  padding: 2rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0.5rem;
+  font-weight: bold;
+}
+
+.nav-right {
+  float: right;
+}
+
+.nav-left {
+  float: left;
+}
+
+.signup {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.signup-area {
+  background-color: #e0c666;
+  padding: 2rem;
+  border-radius: 2rem;
+  height: 50%;
+  width: 33%;
+}
+
+.signup form {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+
+.signup-input {
+  height: 2rem;
+  width: 60%;
+  margin: 1rem;
+}
+
+.signup-button {
+  text-align: center;
+  height: 2rem;
+  width: 60%;
+}
+
+.login {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-area {
+  background-color: #e0c666;
+  padding: 2rem;
+  border-radius: 2rem;
+  height: 50%;
+  width: 33%;
+}
+
+.login form {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+}
+
+.login-input {
+  height: 2rem;
+  width: 60%;
+  margin: 1rem;
+}
+
+.login-button {
+  text-align: center;
+  height: 2rem;
+  width: 60%;
+}
+
+.login a {
+  margin-top: 1rem;
+  color: white;
+  text-decoration: none;
 }

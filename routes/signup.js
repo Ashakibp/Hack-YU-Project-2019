@@ -1,42 +1,26 @@
 var express = require('express');
-
 var router = express.Router();
 
-router.get('/', async function (req, res, next) {
-    signup();
+router.get('/', function (req, res, next) {
     res.render('signup', { title: 'Sign Up' });
 });
 
-function signup(){
+router.post('/', function(req, res, next) {
+    let fname = req.body.firstname;
+    let lname = req.body.lastname;
+    let uname = req.body.username;
+    let pass = req.body.password;
 
-    const MongoClient = require('mongodb').MongoClient;
+    addToDatabase(fname, lname, uname, pass, res);
+});
 
-        // const MongoClient = require('mongodb').MongoClient;
-
-// replace the uri string with your connection string.
-        const uri = "mongodb://shakib:isaloser@docdb-2019-04-05-07-02-38.cluster-ctkpsftjeegu.us-east-1.docdb.amazonaws.com:27017/?ssl=true&ssl_ca_certs=rds-combined-ca-bundle.pem&replicaSet=rs0";
-        MongoClient.connect(uri, function(err, client) {
-            console.log('Connected...');
-            client.created
-            const collection = client.db("dev").collection("users");
-            collection.insertOne({"HI":12}, function(err, res) {
-                console.log("1 document inserted");
-            });
-            // perform actions on the collection object
-            client.close();
-        });
+function addToDatabase(fname, lname, uname, pass, res) {
+    return db.ref('users/').child("users").push().set({
+        firstname: fname,
+        lastname: lname,
+        password: pass,
+        username: uname
+    }).then(res.redirect("/"));
 }
-class user{
-    constructor(){
-        this.firstName = "";
-        this.lastName = "";
-
-    }
-
-
-
-}
-
-router.post
 
 module.exports = router;

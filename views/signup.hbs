@@ -1,7 +1,14 @@
 <div class="signup">
-    <form action="/" method="post">
-        User Name: <input type="text" name="fname"><br>
-        Password: <input type="password" name="lname"><br>
-        <input type="submit" value="Submit">
-    </form>
+    <div class="signup-area">
+        <form name="signup" action="/signup" method="post" onsubmit="return validateForm()">
+            First Name: <input type="text" name="firstname" class="signup-input"><br>
+            Last Name: <input type="text" name="lastname" class="signup-input"><br>
+            User Name: <input type="text" name="username" class="signup-input"><br>
+            Password: <input type="password" name="password" class="signup-input"><br>
+            Confirm: <input type="password" name="confirm" class="signup-input"><br>
+            <input type="submit" value="Submit" id="button" class="signup-button">
+        </form>
+    </div>
 </div>
+
+<script src="/js/signupConfirm.js"></script>
