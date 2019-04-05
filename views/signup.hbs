@@ -1,10 +1,12 @@
 <div class="signup">
-    <form action="/" method="post">
+    <form name="signup" action="/" method="post" onsubmit="return validateForm()">
         First Name: <input type="text" name="firstname"><br>
         Last Name: <input type="text" name="lastname"><br>
         User Name: <input type="text" name="username"><br>
         Password: <input type="password" name="password"><br>
-        Confirm Password: <input type="password" name="password"><br>
-        <input type="submit" value="Submit">
+        Confirm Password: <input type="password" name="confirm"><br>
+        <input type="submit" value="Submit" id="button">
     </form>
 </div>
+
+<script src="/js/signupConfirm.js"></script>

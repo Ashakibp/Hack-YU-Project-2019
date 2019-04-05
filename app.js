@@ -12,12 +12,7 @@ var signUpRouter = require('./routes/signup');
 var app = express();
 
 // view engine setup
-app.engine('hbs', hbs({
-  extname: 'hbs',
-  defaultView: 'default',
-  layoutsDir: __dirname + '/views/pages/',
-  partialsDir: __dirname + '/views/partials/'
-}));
+app.engine('hbs', hbs({ extname: 'hbs', defaultLayout: 'layout', layoutsDir: __dirname + '/views', partialsDir: __dirname + '/views/partials/' }));
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
