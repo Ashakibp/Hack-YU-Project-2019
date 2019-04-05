@@ -10,6 +10,17 @@ router.post('/', function(req, res, next) {
     let lname = req.body.lastname;
     let uname = req.body.username;
     let pass = req.body.password;
+
+    addToDatabase(fname, lname, uname, pass, res);
 });
+
+function addToDatabase(fname, lname, uname, pass, res) {
+    return db.ref('users/').child("users").push().set({
+        firstname: fname,
+        lastname: lname,
+        password: pass,
+        username: uname
+    }).then(res.redirect("/"));
+}
 
 module.exports = router;
