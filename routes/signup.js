@@ -15,7 +15,7 @@ router.post('/', function(req, res, next) {
 });
 
 function addToDatabase(fname, lname, uname, pass, res) {
-    return db.ref('users/').child("users").push().set({
+    return db.ref('/').child("users").push().set({
         firstname: fname,
         lastname: lname,
         password: pass,
